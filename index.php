@@ -3,7 +3,23 @@ session_start(); // mulai session
 
 $error = "";
 
+// jika form login dikirim
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
+    // data login statis
+    $user = "admin";
+    $pass = "1234";
+
+    if ($username == $user && $password == $pass) {
+        $_SESSION['username'] = $username;
+        header("Location: dashboard.php"); // arahkan ke dashboard
+        exit();
+    } else {
+        $error = "Username atau password salah!";
+    }
+}
 ?>
 
 <!DOCTYPE html>
