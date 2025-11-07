@@ -83,6 +83,14 @@ for ($i = 0; $i < count($kode_barang); $i++) {
         }
         ?>
     </table>
+    <?php
+    $grandtotal = array_sum($total);
+    ?>
+
+    <tr>
+        <td colspan="4" align="right"><b>Total Belanja</b></td>
+        <td><b>Rp <?= number_format($grandtotal, 0, ',', '.') ?></b></td>
+    </tr>
 
 </body>
 
